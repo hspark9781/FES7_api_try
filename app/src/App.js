@@ -1,12 +1,17 @@
 import LoginPage from "./Components/LoginPage";
 import JoinPage from "./Components/JoinPage";
+import { useState } from "react";
 
 function App() {
-    // 로그인 기능 
+    const [page, setPage] = useState(true);
+    const handlePage = () => {
+        setPage((prevPage) => {
+            return !prevPage;
+        })
+    }
     return (
         <div>
-            {/* <LoginPage/> */}
-            <JoinPage/>
+            {page ? <LoginPage handlePage={handlePage}/> : <JoinPage handlePage={handlePage}/>}
         </div>
     )
 }

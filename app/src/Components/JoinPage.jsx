@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const JoinPage = ()=>{
+const JoinPage = ({handlePage})=>{
 
 
     const [username, setUsername] = useState("");
@@ -88,6 +88,7 @@ const JoinPage = ()=>{
 
     return(
         <>
+            <button type="button" onClick={handlePage}>로그인페이지로 돌아가기</button>
             <section >
                 <h2 >이메일로 회원가입</h2>
                 <div >
